@@ -5,7 +5,7 @@ function watch(req, res) {
   if (req.query.v) {
   ytdl("https://www.youtube.com/watch?v=" + req.query.v)
   .on('info', (info) => {
-  var watch = fs.readFileSync(__dirname + "/watch.html", "utf8")
+  var watch = fs.readFileSync(__dirname + "/mist/watch.html", "utf8")
   if (req.query.audio == "true") watch = watch.replace('<video src="%SRC%" poster="%POSTER%" class="video" width="70%" controls></video>', '<audio src="%SRC%" poster="%POSTER%" class="video" width="70%" controls></audio>')
   if (req.query.audio == "true") watch = watch.replace("margin-top: auto", "margin-top: 50px")
   watch = watch.replace("%SRC%", "/video?v=" + req.query.v)
@@ -17,7 +17,7 @@ function watch(req, res) {
   res.send(watch)
   })
   } else {
-  res.sendFile(__dirname + "/index.html")
+  res.sendFile(__dirname + "/mist/index.html")
   }
 }
 
