@@ -107,11 +107,11 @@ searchyoutube.addEventListener('keyup', function onEvent(e) {
     if (e.keyCode === 13) {
         var videoid = searchyoutube.value
         if (videoid.startsWith("https://www.youtube.com/watch?v=")) {
-        if (audiobtn.innerText == "On") return [window.location.href = "/watch?v=" + videoid.split("https://www.youtube.com/watch?v=")[1] + "&audio=true", searchyoutube.value = ""];
-        window.location.href = "/watch?v=" + videoid.split("https://www.youtube.com/watch?v=")[1]
+        if (audiobtn.innerText == "On") return [window.location.href = "/mist/watch?v=" + videoid.split("https://www.youtube.com/watch?v=")[1] + "&audio=true", searchyoutube.value = ""];
+        window.location.href = "/mist/watch?v=" + videoid.split("https://www.youtube.com/watch?v=")[1]
         } else {
-        if (audiobtn.innerText == "On") return [window.location.href = "/watch?v=" + videoid + "&audio=true", searchyoutube.value = ""];
-        window.location.href = "/watch?v=" + videoid
+        if (audiobtn.innerText == "On") return [window.location.href = "/mist/watch?v=" + videoid + "&audio=true", searchyoutube.value = ""];
+        window.location.href = "/mist/watch?v=" + videoid
         }
         searchyoutube.value = ""
     }
